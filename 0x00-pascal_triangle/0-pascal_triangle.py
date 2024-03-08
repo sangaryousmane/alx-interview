@@ -2,6 +2,7 @@
 """ This module solves the pascal triangle problem
 """
 
+
 def pascal_triangle(n):
     """
     Generates the Pascal's triangle up to the specified number of rows.
