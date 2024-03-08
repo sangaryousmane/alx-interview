@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+""" This module solves the pascal triangle problem
+"""
 
 def pascal_triangle(n):
     """
