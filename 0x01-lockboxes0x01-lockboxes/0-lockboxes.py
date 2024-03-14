@@ -7,6 +7,9 @@ and each box may contain keys to the other boxes.
 
 
 def canUnlockAll(boxes):
+    """ Write a method that determines if all the boxes can be opened.
+    """
+
     if not boxes:
         return False
 
