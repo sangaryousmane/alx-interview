@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ A function that calculates the fewest number
 of operations needed to result in exactly n H characters in the file
 """
@@ -8,15 +8,15 @@ import math
 def minOperations(n):
     """ A function that calculates the fewest number
     of operations needed to result in exactly n H characters in the file"""
-    if n <= 1:
+    if not isinstance(n, int):
         return 0
 
     operations = 0
-
-    for i in range(2, int(math.sqrt(n)) + 1):
-        while n % i == 0:
+    i = 2
+    while i <= n:
+        if not (n % i):
+            n = int(n / i)
             operations += i
-            n //= i
-    if n > 1:
-        operations += n
+            i = 1
+        i += 1
     return operations
