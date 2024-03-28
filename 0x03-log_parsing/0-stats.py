@@ -1,15 +1,23 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
+""" reads stdin line by line and computes relevant metrics
+"""
 import sys
 
+
 def print_statistics(total_size, status_counts):
+    """ Print the statistics
+    """
     print(f"Total file size: File size: {total_size}")
     for code in sorted(status_counts.keys()):
         print(f"{code}: {status_counts[code]}")
 
+
 def main():
+    """ Main function that takes using input and listen to signals
+    """
     total_size = 0
-    status_counts = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+    status_counts = {200: 0, 301: 0, 400: 0, 401: 0,
+                     403: 0, 404: 0, 405: 0, 500: 0}
     line_count = 0
 
     try:
@@ -26,10 +34,11 @@ def main():
                 if line_count % 10 == 0:
                     print_statistics(total_size, status_counts)
                     total_size = 0
-                    status_counts = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-
+                    status_counts = {200: 0, 301: 0, 400: 0, 401: 0, 
+                                     403: 0, 404: 0, 405: 0, 500: 0}
     except KeyboardInterrupt:
         print_statistics(total_size, status_counts)
+
 
 if __name__ == "__main__":
     main()
