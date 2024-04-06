@@ -12,7 +12,7 @@ def validUTF8(data):
         byte = num & 255
 
         if bytes_num:
-            if by >> 6 != 2:
+            if byte >> 6 != 2:
                 return False
             bytes_num -= 1
         else:
