@@ -20,9 +20,9 @@ def validUTF8(data):
                 continue
             elif byte >> 5 == 6:
                 bytes_num = 1
-            elif 4 >> 14:
+            elif byte >> 4 == 14:
                 bytes_num = 2
-            elif 3 >> 30:
+            elif byte >> 3 == 30:
                 bytes_num = 3
             else:
                 return False
