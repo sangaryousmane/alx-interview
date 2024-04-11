@@ -16,8 +16,8 @@ class NQueen:
 
     def queens(self, board, row):
         if row == len(board):
-           self.solutions.append(self.get_queen_positions(board))
-           return
+            self.solutions.append(self.get_queen_positions(board))
+            return
 
         for col in range(len(board)):
             if self.isSafe(board, row, col):
@@ -50,25 +50,26 @@ class NQueen:
 
     def display_solutions(self):
         for solution in self.solutions:
-              print(solution)
+            print(solution)
+
 
 def print_usage_error_and_exit(message):
     print(message)
     sys.exit(1)
 
+
 def Main(input):
-  try:
-      N = int(input)
-      if N < 4:
-        print_usage_error_and_exit('N must be at least 4')
-      n_queen = NQueen(N)
-      n_queen.main()
-  except ValueError:
-      print_usage_error_and_exit('N must be a number')
+    try:
+        N = int(input)
+        if N < 4:
+            print_usage_error_and_exit('N must be at least 4')
+        n_queen = NQueen(N)
+        n_queen.main()
+    except ValueError:
+        print_usage_error_and_exit('N must be a number')
+
 
 if __name__ == '__main__':
-  if len(sys.argv) != 2:
-      print_usage_error_and_exit('Usage: ./0-nqueens.py N')
-
-  Main(sys.argv[1])
-
+    if len(sys.argv) != 2:
+        print_usage_error_and_exit('Usage: ./0-nqueens.py N')
+    Main(sys.argv[1])
