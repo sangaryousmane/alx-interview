@@ -4,8 +4,6 @@
 import sys
 
 
-import sys
-
 class NQueen:
     def __init__(self, n):
         self.n = n
