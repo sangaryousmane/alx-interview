@@ -71,5 +71,5 @@ def Main(input):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print_usage_error_and_exit('Usage: ./0-nqueens.py N')
+        print_usage_error_and_exit('Usage: nqueens N')
     Main(sys.argv[1])
