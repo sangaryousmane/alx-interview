@@ -3,6 +3,7 @@
 determine who the winner of each game is
 """
 
+
 def isWinner(x, nums):
     """ Main Function - determines the winner
     of each game
@@ -32,7 +33,7 @@ def isWinner(x, nums):
             if is_prime(i):
                 primes.append(i)
         return primes
-    
+
     def play_game(n):
         """ Play the game
         """
@@ -51,7 +52,6 @@ def isWinner(x, nums):
                 primes = [p for p in primes if p % chosen_prime != 0]
             maria_turn = not maria_turn
         return "Ben" if maria_turn else "Maria"
-    
     maria_wins = 0
     ben_wins = 0
     for n in nums:
@@ -60,7 +60,6 @@ def isWinner(x, nums):
             maria_wins += 1
         else:
             ben_wins += 1
-    
     if maria_wins > ben_wins:
         return "Maria"
     elif ben_wins > maria_wins:
