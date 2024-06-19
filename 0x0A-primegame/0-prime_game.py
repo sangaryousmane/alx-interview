@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Prime Game
 determine who the winner of each game is
 """
