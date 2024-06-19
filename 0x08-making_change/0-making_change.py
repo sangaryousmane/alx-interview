@@ -6,6 +6,8 @@
 def makeChange(coins, total):
     """ Make a change to reach a given total
     """
+    if total <= 0:
+        return 0
 
     dp = [float('inf')] * (total + 1)
     dp[0] = 0
